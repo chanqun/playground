@@ -4,15 +4,15 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 plugins {
     java
     application
-    id("org.springframework.boot") version "2.5.2" apply false
+    id("org.springframework.boot") version "2.5.6" apply false
     id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
     id("org.asciidoctor.jvm.convert") version "3.3.2"
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
-    kotlin("jvm") version "1.5.20"
-    kotlin("kapt") version "1.5.20"
-    kotlin("plugin.spring") version "1.5.20" apply false
-    kotlin("plugin.jpa") version "1.5.20" apply false
-    kotlin("plugin.allopen") version "1.5.20" apply false
+    kotlin("jvm") version "1.5.31"
+    kotlin("kapt") version "1.5.31"
+    kotlin("plugin.spring") version "1.5.31" apply false
+    kotlin("plugin.jpa") version "1.5.31" apply false
+    kotlin("plugin.allopen") version "1.5.31" apply false
 }
 
 allprojects {
@@ -23,8 +23,11 @@ allprojects {
 }
 
 subprojects {
-    val queryDslVer = "4.4.0"
-    val modelMapperVer = "2.3.8"
+    val queryDslVer = "5.0.0"
+    val modelMapperVer = "2.4.4"
+
+    extra["log4j_version"] = "2.15.0"
+    extra["log4j2.version"] = "2.15.0"
 
     apply {
         plugin("java")
@@ -55,6 +58,7 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter-security")
         implementation("org.springframework.boot:spring-boot-starter-validation")
         implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("io.github.microutils:kotlin-logging:1.7.10")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -143,7 +147,7 @@ project(":api") {
         dependsOn("bootJar")
         archiveFileName.set("tourism-api.zip")
 
-        from("build/libs/tourism-api.jar") { into("") }
+        from("build/libs/playground-api.jar") { into("") }
         from("../.platform") { into(".platform") }
         from("../procfiles/api/Procfile") { into("") }
     }

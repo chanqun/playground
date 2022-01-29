@@ -12,7 +12,7 @@ plugins {
     kotlin("kapt") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31" apply false
     kotlin("plugin.jpa") version "1.5.31" apply false
-    kotlin("plugin.allopen") version "1.5.31" apply false
+    kotlin("plugin.allopen") version "1.5.31"
 }
 
 allprojects {
@@ -66,6 +66,7 @@ subprojects {
         implementation("org.springframework.session:spring-session-core")
         implementation("com.querydsl:querydsl-jpa:$queryDslVer")
         implementation("org.modelmapper:modelmapper:$modelMapperVer")
+        implementation("io.projectreactor:reactor-core")
 
         runtimeOnly("com.h2database:h2")
         runtimeOnly("mysql:mysql-connector-java")

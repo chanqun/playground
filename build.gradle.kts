@@ -67,6 +67,7 @@ subprojects {
         implementation("com.querydsl:querydsl-jpa:$queryDslVer")
         implementation("org.modelmapper:modelmapper:$modelMapperVer")
         implementation("io.projectreactor:reactor-core")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 
         runtimeOnly("com.h2database:h2")
         runtimeOnly("mysql:mysql-connector-java")

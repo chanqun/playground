@@ -68,6 +68,7 @@ subprojects {
         implementation("org.modelmapper:modelmapper:$modelMapperVer")
         implementation("io.projectreactor:reactor-core")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+        implementation("io.reactivex.rxjava3:rxjava:3.0.6")
 
         runtimeOnly("com.h2database:h2")
         runtimeOnly("mysql:mysql-connector-java")

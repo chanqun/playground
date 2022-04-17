@@ -8,11 +8,11 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
     id("org.asciidoctor.jvm.convert") version "3.3.2"
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
-    kotlin("jvm") version "1.5.31"
-    kotlin("kapt") version "1.5.31"
-    kotlin("plugin.spring") version "1.5.31" apply false
-    kotlin("plugin.jpa") version "1.5.31" apply false
-    kotlin("plugin.allopen") version "1.5.31"
+    kotlin("jvm") version "1.6.20"
+    kotlin("kapt") version "1.6.20"
+    kotlin("plugin.spring") version "1.6.20" apply false
+    kotlin("plugin.jpa") version "1.6.20" apply false
+    kotlin("plugin.allopen") version "1.6.20"
 }
 
 allprojects {
